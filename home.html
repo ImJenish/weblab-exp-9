@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style1.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script>
+        var app = angular.module('myapp',['ngRoute']);
+        app.config(function($routeProvider){
+            $routeProvider.when('/login',{
+                templateUrl: 'login.html'
+            })
+            .when('/register',{
+                templateUrl: 'register.html'
+            })
+        });
+    </script>
+</head>
+<body ng-app="myapp">
+    <h1>Welcome to my Website</h1>
+    <hr>
+    <div class="sidebar">
+        <a href="#!login">Login</a>
+        <a href="#!register">Sign Up</a>
+    </div>
+    <div class="content" ng-view>
+
+    </div>
+</body>
+</html>
